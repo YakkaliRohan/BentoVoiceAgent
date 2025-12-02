@@ -29,7 +29,7 @@ def transcribe_with_groq(url: str) -> str:
     r = requests.post("https://api.groq.com/openai/v1/audio/transcriptions",
                       headers=headers, data=data, files=files, timeout=60)
     r.raise_for_status()
-    return r.json().get("text", "(empty)"
+    return r.json().get("text", "(empty)")
 
 def exoml_say_record(prompt: str, base: str) -> str:
     return f"""<?xml version="1.0" encoding="UTF-8"?>
